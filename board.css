@@ -1,0 +1,42 @@
+body {
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin: 5%; /* Remove default margin */
+}
+
+.board {
+  position: relative;
+  justify-content: center;
+  display: grid;
+  width: 480px;
+  height: 480px;
+}
+
+.square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  z-index: 0;
+
+  border: 1px solid rgba(173, 216, 230, 0.25);
+  box-sizing: border-box;
+  
+  cursor: grab; /* Indicate draggable squares */
+}
+
+.white { background-color: #eeeed2; }
+.green { background-color: #769656; }
+
+.piece {
+  width: 62px;
+  height: auto;
+  cursor: grab;
+  z-index: 5;
+}
+
+.detached {
+  background-color: red;
+}
