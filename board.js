@@ -12,7 +12,8 @@ export function renderBoard(size, layout) {
   let hasMovedSquare = false;
 
   //server stuff
-  const ws = new WebSocket('ws://localhost:8080');
+  const wsProtocol = window.location.protocol === "https:" ? "wss:" : "ws:";
+  const ws = new WebSocket(`${wsProtocol}//${window.location.host}`);
 
   // WebSocket event handlers
   ws.onopen = () => {
