@@ -1,37 +1,38 @@
 body {
-  display: flex; /* Use flexbox for centering */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  margin: 5%; /* Remove default margin */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 2.5vh 2.5vw;
+  box-sizing: border-box;
 }
 
 .board {
   position: relative;
   justify-content: center;
   display: grid;
-  width: 480px;
-  height: 480px;
 }
 
 .square {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
+  width: calc(min(95vw, 95vh) / 16);
+  height: calc(min(95vw, 95vh) / 16);
   z-index: 0;
 
   border: 1px solid rgba(173, 216, 230, 0.25);
   box-sizing: border-box;
-  
-  cursor: grab; /* Indicate draggable squares */
+
+  cursor: grab;
 }
 
 .white { background-color: #eeeed2; }
 .green { background-color: #769656; }
 
 .piece {
-  width: 62px;
+  width: calc(min(95vw, 95vh) / 16);
   height: auto;
   cursor: grab;
   z-index: 5;

@@ -67,7 +67,7 @@ export function renderBoard(size, layout) {
 
     const colCount = maxCol - minCol + 1;
 
-    board.style.gridTemplateColumns = `repeat(${colCount}, 60px)`;
+    board.style.gridTemplateColumns = `repeat(${colCount}, calc(min(95vw, 95vh) / 16))`;
 
     for (let row = minRow; row <= maxRow; row++) {
       for (let col = minCol; col <= maxCol; col++) {
