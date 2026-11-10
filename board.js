@@ -1,4 +1,5 @@
-import { getCurrentPosition, isValidMove, isPawnPromotion } from "./pieces.js";
+import { convertBoardto2D } from "./board_rules.js";
+import { isValidMove, isPawnPromotion } from "./pieces.js";
 
 export function renderBoard(size, layout) {
   const board = document.getElementById("chessboard");
@@ -96,8 +97,8 @@ export function renderBoard(size, layout) {
             });
 
             pieceElement.addEventListener("dragend", () => {
-              board_state = getCurrentPosition(size);
-
+              board_state = convertBoardto2D(boardMap);
+              console.log(board_state)
               //turn logic
               if (hasMovedPiece) return; //don't allow player to move two piees
               if (!piece.startsWith(currentTurn)) return; //only allow the player of the same color to move the piece

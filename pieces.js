@@ -1,32 +1,5 @@
 let color;
 
-export function getCurrentPosition(board_size) {
-  let board = []; // Declare the board array
-  let squares = document.querySelectorAll("div.square");
-
-  for (let i = 0; i < board_size; i++) {
-    let row = []; // Declare a new row array for each iteration of i
-
-    for (let j = 0; j < board_size; j++) {
-      // Declare j using let
-      let square = squares[i * board_size + j];
-
-      if (square.hasChildNodes()) {
-        row.push(square.childNodes[0].alt);
-      } else if (
-        square.classList.contains("green") ||
-        square.classList.contains("white")
-      ) {
-        row.push("  ");
-      } else {
-        row.push(null);
-      }
-    }
-    board.push(row);
-  }
-
-  return board; // Return the 2D board array
-}
 
 export function isValidMove(row, col, t_row, t_col, piece, board_state) {
   switch (true) {
