@@ -4,5 +4,7 @@
     "express": "^5.2.1",
     "ws": "^8.18.3"
   },
-  "start": "node server.js"
+  "scripts": {
+    "start": "node server.js"
+  }
 }
